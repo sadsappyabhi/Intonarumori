@@ -1,3 +1,5 @@
+package org.example;
+
 /**
  * This interface sets the basic criteria required of any product to work within the Intonarumori inventory tracking
  * system. Implementing this interface allows for seamless integration of your product into the inventory system.
