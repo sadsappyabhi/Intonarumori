@@ -2,6 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Dollar treefiddy = new Dollar(3, 50);
+        System.out.println(treefiddy);
     }
 }

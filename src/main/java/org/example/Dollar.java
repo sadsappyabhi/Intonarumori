@@ -95,6 +95,8 @@ public class Dollar {
      */
     @Override
     public String toString() {
-        return String.format("[%f Dollars, %f Cents]");
+        long dollars = this.value / 100;
+        long cents = (long) (this.value - dollars * 100);
+        return String.format("[%d Dollars, %d Cents]", dollars, cents);
     }
 }
