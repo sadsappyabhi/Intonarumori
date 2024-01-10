@@ -7,21 +7,6 @@ package org.example;
 
 public interface Product {
 
-
-    /**
-     * Return the product name.
-     * @return String Product name
-     */
-
-    String getName();
-
-    /**
-     * Set product name.
-     * @param name Product name
-     */
-
-    void setName(String name);
-
     /**
      * Return product ID
      * @return String Id
@@ -34,7 +19,7 @@ public interface Product {
      * @param id Product ID
      */
 
-    void setId(String id);
+    void setProductId(String id);
     /**
      * Return the product description.
      * @return String Product description
