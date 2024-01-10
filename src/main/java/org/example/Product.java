@@ -6,33 +6,7 @@ package org.example;
  */
 
 public interface Product {
-    /**
-     * Return the product description.
-     * @return String Product description
-     */
 
-    String getDescription();
-
-    /**
-     * Set the product description.
-     * @param desc Product description
-     */
-
-    void setDescription(String desc);
-
-    /**
-     * Return the product price.
-     * @return Dollar Product Price
-     */
-
-    Dollar getPrice();
-
-    /**
-     * Set the product price.
-     * @param price Product price
-     */
-
-    void setPrice(Dollar price);
 
     /**
      * Return the product name.
@@ -61,6 +35,32 @@ public interface Product {
      */
 
     void setId(String id);
+    /**
+     * Return the product description.
+     * @return String Product description
+     */
+    /**
+     * Return the product price.
+     * @return Dollar Product Price
+     */
+
+    Dollar getPrice();
+
+    /**
+     * Set the product price.
+     * @param price Product price
+     */
+
+    void setPrice(Dollar price);
+
+    String getDescription();
+
+    /**
+     * Set the product description.
+     * @param desc Product description
+     */
+
+    void setDescription(String desc);
 
     /**
      * Return product quantity in stock
