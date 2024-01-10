@@ -7,12 +7,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LookupIdTest {
 
-    @BeforeEach
-    void setUp() {
-    }
+    private LookupId li;
 
+    @BeforeEach
+    public void setUp() {
+        li = new LookupId("10");
+    }
+    @Test
+    public void testConstructor() {
+        assertNotNull(li);
+    }
     @Test
     void matches() {
 
+    }
+
+    @Test
+    void testMatches() {
     }
 }
