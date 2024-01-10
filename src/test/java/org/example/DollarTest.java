@@ -109,9 +109,9 @@ class DollarTest {
 
     @Test
     void testToString() {
-        assertEquals("[3 Dollars, 50 Cents]", treeFiddy.toString());
-        assertEquals("[4 Dollars, 56 Cents]", pennies.toString());
-        assertEquals("[0 Dollars, 0 Cents]", zero.toString());
-        assertEquals("[29 Dollars, 99 Cents]", fromDouble.toString());
+        assertEquals("$3.50", treeFiddy.toString());
+        assertEquals("$4.56", pennies.toString());
+        assertEquals("$0.00", zero.toString());
+        assertEquals("$29.99", fromDouble.toString());
     }
 }

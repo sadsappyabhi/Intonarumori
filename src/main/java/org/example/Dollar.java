@@ -97,6 +97,6 @@ public class Dollar {
     public String toString() {
         long dollars = this.value / 100;
         long cents = (long) (this.value - dollars * 100);
-        return String.format("[%d Dollars, %d Cents]", dollars, cents);
+        return String.format("$%d.%d", dollars, cents);
     }
 }

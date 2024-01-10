@@ -8,7 +8,7 @@ continue my coursework towards my B.S. in Computer Science. This is why you will
 taking place between semesters.
 ***
 ## Notes / TODO:
-Lookup Tests needs implementation - need to build product classes in order to test lookup classes.
+Finish product classes and tests before writing Lookup tests (lookup tests require working with Product objects)
 
 
 Products:

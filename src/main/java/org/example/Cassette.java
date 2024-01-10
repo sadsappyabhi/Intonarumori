@@ -11,6 +11,14 @@ public class Cassette extends MusicProduct {
     private GregorianCalendar releaseDate;
 
     /**
+     * Default (empty) constructor for a Cassette object.
+     */
+
+    public Cassette() {
+        // Do nothing
+    }
+
+    /**
      * Explicit constructor for a Cassette object.
      */
     public Cassette(String artist, String title, String id, Dollar price, String description, int quantity,
@@ -72,9 +80,9 @@ public class Cassette extends MusicProduct {
                 releaseDate.get(GregorianCalendar.YEAR),
                 releaseDate.get(GregorianCalendar.MONTH) + 1,
                 releaseDate.get(GregorianCalendar.DATE));
-        return String.format("Cassette[Artist=%s, Title=%s, ProductID=%s, Price=%f.02, Description=%s, " +
+        return String.format("Cassette[Artist=%s, Title=%s, ProductID=%s, Price=%s, Description=%s, " +
                 "QuantityOnHand=%d, Duration=%s, ReleaseDate=%s", this.artist, this.title, this.id,
-                this.price.asDouble(), this.description, this.quantity, this.getDuration(), printDate);
+                this.price.toString(), this.description, this.quantity, this.getDuration(), printDate);
     }
 
 
