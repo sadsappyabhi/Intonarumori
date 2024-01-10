@@ -20,12 +20,24 @@ public class LookupName implements Lookup {
      */
 
     public boolean matches(Product product) {
-        if (product.getName() == null && query == null) {
-            return true;
+        if (product instanceof MusicProduct album) {
+            if (album.getTitle() == null && query == null) {
+                return true;
+            }
+            else if (album.getTitle() == null || query == null) {
+                return false;
+            }
+            else return album.getTitle().startsWith(query);
         }
-        else if (product.getName() == null || query == null) {
-            return false;
+        else if (product instanceof MerchProduct merch) {
+            if (merch.getName() == null && query == null) {
+                return true;
+            }
+            else if (merch.getName() == null || query == null) {
+                return false;
+            }
+            else return merch.getName().startsWith(query);
         }
-        else return product.getName().startsWith(query);
+        return false;
     }
 }
