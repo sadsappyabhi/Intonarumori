@@ -1,9 +1,4 @@
 package org.example;
-
-import org.example.AbstractProduct;
-import org.example.Dollar;
-import org.example.DataValidation;
-
 import java.util.GregorianCalendar;
 
 /**
@@ -77,7 +72,9 @@ public class Cassette extends MusicProduct {
                 releaseDate.get(GregorianCalendar.YEAR),
                 releaseDate.get(GregorianCalendar.MONTH) + 1,
                 releaseDate.get(GregorianCalendar.DATE));
-        return String.format("Cassette[Name");
+        return String.format("Cassette[Artist=%s, Title=%s, ProductID=%s, Price=%f.02, Description=%s, " +
+                "QuantityOnHand=%d, Duration=%s, ReleaseDate=%s", this.artist, this.title, this.id,
+                this.price.asDouble(), this.description, this.quantity, this.getDuration(), printDate);
     }
 
 
