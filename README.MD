@@ -8,9 +8,6 @@ continue my coursework towards my B.S. in Computer Science. This is why you will
 taking place between semesters.
 ***
 ## Notes / TODO:
-Finish product classes and tests before writing Lookup tests (lookup tests require working with Product objects)
-
-
 Products:
 - Vinyl
 - Cassette
@@ -29,8 +26,11 @@ Order of Product Attributes:
 - ID
 - Price
 - Description
-- Quantity
+- Quantity 
 
-
-
-
+## FIXME: 
+- Finish product classes and tests before writing Lookup tests (lookup tests require working with Product objects).
+- MusicProduct class needs an overridden `toString()` method still. (Each MusicProduct class has a unique identifier 
+  e.g. LP/EP for Vinyl, CD/CDR and 80mm/120mm for CDs, duration for tape)
+- Implementation needed for file i/o and order processing.
+- PurchaseOrder class should use Lists rather than Arrays.

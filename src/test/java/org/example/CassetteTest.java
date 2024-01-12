@@ -8,39 +8,39 @@ import java.util.GregorianCalendar;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CassetteTest {
+public class CassetteTest {
 
     private Cassette c;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         c = new Cassette();
         assertNotNull(c);
     }
 
     @Test
-    void testArtist() {
+    public void testArtist() {
         assertNull(c.getArtist());
         c.setArtist("Hearsay");
         assertEquals("Hearsay", c.getArtist());
     }
 
     @Test
-    void testTitle() {
+    public void testTitle() {
         assertNull(c.getTitle());
         c.setTitle("Glossolalia");
         assertEquals("Glossolalia", c.getTitle());
     }
 
     @Test
-    void testProductId() {
+    public void testProductId() {
         assertNull(c.getProductId());
         c.setProductId("AM049");
         assertEquals("AM049", c.getProductId());
     }
 
     @Test
-    void testPrice() {
+    public void testPrice() {
         assertNull(c.getPrice());
         Dollar treefiddy = new Dollar(3,50);
         c.setPrice(treefiddy);
@@ -48,7 +48,7 @@ class CassetteTest {
     }
 
     @Test
-    void testDescription() {
+    public void testDescription() {
         assertNull(c.getDescription());
         c.setDescription("Expanding on the adventurous techniques that manifested their self-titled debut album, " +
                 "Chicago improvising trio, Hearsay returns with Glossolalia.");
@@ -57,7 +57,7 @@ class CassetteTest {
     }
 
     @Test
-    void testQuantity() {
+    public void testQuantity() {
         assertEquals(0, c.getQuantity());
         c.setQuantity(100);
         assertEquals(100, c.getQuantity());
@@ -65,7 +65,7 @@ class CassetteTest {
 
 
     @Test
-    void testEquals() {
+    public void testEquals() {
         Dollar treefiddy = new Dollar(3, 50);
         GregorianCalendar hgrd = new GregorianCalendar(2023, GregorianCalendar.SEPTEMBER, 29);
         c.setArtist("Hearsay");
@@ -89,7 +89,7 @@ class CassetteTest {
     }
 
     @Test
-    void testDuration() {
+    public void testDuration() {
         assertEquals("C-0", c.getDuration());
         c.setDuration(30);
         assertEquals("C-30", c.getDuration());
@@ -97,7 +97,7 @@ class CassetteTest {
 
 
     @Test
-    void testReleaseDate() {
+    public void testReleaseDate() {
         GregorianCalendar hgrd = new GregorianCalendar(2023, Calendar.SEPTEMBER, 29);
         assertNull(c.getReleaseDate());
         c.setReleaseDate(hgrd);
@@ -105,7 +105,7 @@ class CassetteTest {
     }
 
     @Test
-    void testToString() {
+    public void testToString() {
         GregorianCalendar vprd = new GregorianCalendar(2023, Calendar.FEBRUARY, 3);
         Dollar treefiddy = new Dollar(3, 50);
         Cassette inv = new Cassette("Violent Pleasures", "Iron Nerve & Vanity", "DBT012", treefiddy, "To oppose " +

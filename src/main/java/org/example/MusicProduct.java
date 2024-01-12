@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.GregorianCalendar;
+
 /**
  * Abstract class of the Product interface
  */
@@ -12,6 +14,7 @@ public abstract class MusicProduct implements Product {
 
     protected String artist;
     protected String title;
+    protected GregorianCalendar releaseDate;
 
     /**
      * Default constructor, creates an empty object.
@@ -30,15 +33,18 @@ public abstract class MusicProduct implements Product {
      * @param price       Product Price
      * @param description Product Description
      * @param quantity    Product Quantity-on-hand
+     * @param releaseDate Product Release Date
      */
 
-    public MusicProduct(String artist, String title, String id, Dollar price, String description, int quantity) {
+    public MusicProduct(String artist, String title, String id, Dollar price, String description, int quantity,
+                        GregorianCalendar releaseDate) {
         this.setArtist(artist);
         this.setTitle(title);
         this.setProductId(id);
         this.setPrice(price);
         this.setDescription(description);
         this.setQuantity(quantity);
+        this.setReleaseDate(releaseDate);
     }
 
 
@@ -116,6 +122,20 @@ public abstract class MusicProduct implements Product {
     }
 
     /**
+     * A pair of getters and setters for Release Date
+     */
+
+    public GregorianCalendar getReleaseDate() {
+        return this.releaseDate;
+    }
+
+    public void setReleaseDate(GregorianCalendar date) {
+        DataValidation.nonEmptyDate(date);
+        this.releaseDate = date;
+    }
+
+
+    /**
      * An override of Object.equals() for the sake of comparing Product object equality.
      * @param obj The other Product to compare to
      */
@@ -124,12 +144,23 @@ public abstract class MusicProduct implements Product {
     public boolean equals(Object obj) {
         boolean isEqual = false;
         if (obj instanceof MusicProduct otherProduct) {
-            if (artist.equals(otherProduct.artist) && title.equals(otherProduct.title) &&
-                    price.equals(otherProduct.price) && id.equals(otherProduct.id) && quantity == otherProduct.quantity
-                    && description.equals(otherProduct.getDescription())) {
+            if (artist.equals(otherProduct.getArtist()) && title.equals(otherProduct.getTitle()) &&
+                    price.equals(otherProduct.getPrice()) && id.equals(otherProduct.getProductId()) && quantity == otherProduct.getQuantity()
+                    && description.equals(otherProduct.getDescription()) && releaseDate.equals(otherProduct.getReleaseDate())) {
                 isEqual = true;
             }
         }
         return isEqual;
+    }
+
+    @Override
+    public String toString() {
+        String printDate = String.format("%04d-%02d-%02d",
+                releaseDate.get(GregorianCalendar.YEAR),
+                releaseDate.get(GregorianCalendar.MONTH) + 1,
+                releaseDate.get(GregorianCalendar.DATE));
+        return String.format("Artist=%s, Title=%s, ProductID=%s, Price=%s, Description=%s, " +
+                        "QuantityOnHand=%d, ReleaseDate=%s", this.artist, this.title, this.id,
+                this.price.toString(), this.description, this.quantity, printDate);
     }
 }
