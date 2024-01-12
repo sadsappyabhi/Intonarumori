@@ -14,12 +14,11 @@ Products:
 - CD
 - Zine
 - Gift Card
+- Clothing (T-shirts, Hoodies)
+- Buttons/Pins/Stickers
 
 Vinyl can have additional designation of LP or EP (12" or 7") (enum?)
-
-CD can have further distinction of mini-CDR (boolean)
-
-Cassette will have length property (String e.g. C-20)
+Clothing classes (T-shirt/Hoodie) can inherit most methods from an abstract clothing class.
 
 Order of Product Attributes:
 - Name (or Artist/Title for Music)
@@ -29,6 +28,7 @@ Order of Product Attributes:
 - Quantity 
 
 ## FIXME: 
+- Product classes and their test cases.
 - Finish product classes and tests before writing Lookup tests (lookup tests require working with Product objects).
 - MusicProduct class needs an overridden `toString()` method still. (Each MusicProduct class has a unique identifier 
   e.g. LP/EP for Vinyl, CD/CDR and 80mm/120mm for CDs, duration for tape)
