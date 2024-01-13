@@ -3,7 +3,7 @@ package org.example;
 import java.util.GregorianCalendar;
 
 /**
- * Abstract class of the Product interface
+ * Abstract class of the Product interface for Recorded Music Products
  */
 
 public abstract class MusicProduct implements Product {

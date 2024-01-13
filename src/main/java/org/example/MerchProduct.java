@@ -1,7 +1,7 @@
 package org.example;
 
 /**
- * Abstract class of the Product interface
+ * Abstract class of the Product interface for General Merch Products
  */
 
 public abstract class MerchProduct implements Product {
@@ -110,5 +110,11 @@ public abstract class MerchProduct implements Product {
             }
         }
         return isEqual;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Name=%s, ProductID=%s, Price=%s, Description=%s, QuantityOnHand=%d"
+                , this.getName(), this.getProductId(), this.getPrice(), this.getDescription(), this.getQuantity());
     }
 }
