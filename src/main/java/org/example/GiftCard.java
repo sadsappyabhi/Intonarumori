@@ -19,7 +19,7 @@ public class GiftCard extends MerchProduct {
      */
     public GiftCard(String name, String id, Dollar price, String description, int quantity) {
         super(name, id, price, description, quantity);
-        DataValidation.positiveMoney(price);
+//        DataValidation.positiveMoney(price);
         this.balance = price;
     }
 
