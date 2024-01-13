@@ -60,7 +60,7 @@ public class Dollar {
 
     /**
      * Method to check if the Dollar object has a negative value.
-     * @return boolean whether or not the Dollar object has a negative value
+     * @return boolean whether the Dollar object has a negative value
      */
 
     public boolean isNegative() {
@@ -79,7 +79,7 @@ public class Dollar {
     /**
      * Overrides Object.equals() for comparing the value of two Dollar objects.
      * @param other the other Dollar object to compare against.
-     * @return boolean whether or not the two Dollar objects have equal value.
+     * @return boolean whether the two Dollar objects have equal value.
      */
     @Override
     public boolean equals(Object other) {
@@ -97,6 +97,6 @@ public class Dollar {
     public String toString() {
         long dollars = this.value / 100;
         long cents = (long) (this.value - dollars * 100);
-        return String.format("$%d.%d", dollars, cents);
+        return String.format("$%d.%02d", dollars, cents);
     }
 }

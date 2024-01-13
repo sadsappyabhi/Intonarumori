@@ -45,6 +45,7 @@ public abstract class MerchProduct implements Product {
     }
 
     public void setName(String name) {
+        DataValidation.nonEmptyString(name);
         this.name = name;
     }
 
@@ -57,6 +58,7 @@ public abstract class MerchProduct implements Product {
     }
 
     public void setProductId(String id) {
+        DataValidation.nonEmptyString(id);
         this.id = id;
     }
 
@@ -69,6 +71,7 @@ public abstract class MerchProduct implements Product {
     }
 
     public void setPrice(Dollar price) {
+        DataValidation.positiveMoney(price);
         this.price = price;
     }
     /**
@@ -80,6 +83,7 @@ public abstract class MerchProduct implements Product {
     }
 
     public void setDescription(String description) {
+        DataValidation.nonEmptyString(description);
         this.description = description;
     }
 

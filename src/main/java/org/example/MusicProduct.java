@@ -83,6 +83,7 @@ public abstract class MusicProduct implements Product {
     }
 
     public void setProductId(String id) {
+        DataValidation.nonEmptyString(id);
         this.id = id;
     }
 
@@ -95,6 +96,7 @@ public abstract class MusicProduct implements Product {
     }
 
     public void setPrice(Dollar price) {
+        DataValidation.positiveMoney(price);
         this.price = price;
     }
     /**
@@ -106,6 +108,7 @@ public abstract class MusicProduct implements Product {
     }
 
     public void setDescription(String description) {
+        DataValidation.nonEmptyString(description);
         this.description = description;
     }
 
