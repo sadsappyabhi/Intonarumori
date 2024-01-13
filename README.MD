@@ -30,6 +30,7 @@ Order of Product Attributes:
 ## FIXME: 
 - Product classes and their test cases.
 - Finish product classes and tests before writing Lookup tests (lookup tests require working with Product objects).
+- `LookupName.matches()` will need to be refactored after creating Clothing classes in order to achieve 100% coverage.
 - MusicProduct class needs an overridden `toString()` method still. (Each MusicProduct class has a unique identifier 
   e.g. LP/EP for Vinyl, CD/CDR and 80mm/120mm for CDs, duration for tape)
 - Implementation needed for file i/o and order processing.
