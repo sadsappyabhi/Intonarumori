@@ -4,11 +4,9 @@ import java.util.GregorianCalendar;
 /**
  * This class represents a Cassette Tape in inventory
  */
-
 public class Cassette extends MusicProduct {
 
     private int duration;
-    private GregorianCalendar releaseDate;
 
     /**
      * Default (empty) constructor for a Cassette object.
@@ -22,8 +20,7 @@ public class Cassette extends MusicProduct {
      * Explicit constructor for a Cassette object.
      */
     public Cassette(String artist, String title, String id, Dollar price, String description, int quantity,
-                    int duration,
-                    GregorianCalendar releaseDate) {
+                 GregorianCalendar releaseDate, int duration) {
         super(artist, title, id, price, description, quantity, releaseDate);
         this.setDuration(duration);
     }

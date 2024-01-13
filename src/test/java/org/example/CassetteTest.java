@@ -11,11 +11,22 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CassetteTest {
 
     private Cassette c;
+    private Dollar treefiddy;
+    private GregorianCalendar hgReleaseDate;
+    private GregorianCalendar vpReleaseDate;
+    private String hgDesc;
+    private String vpDesc;
 
     @BeforeEach
     public void setUp() {
         c = new Cassette();
         assertNotNull(c);
+        treefiddy = new Dollar(3, 50);
+        hgReleaseDate = new GregorianCalendar(2023, Calendar.SEPTEMBER, 29);
+        vpReleaseDate = new GregorianCalendar(2023, Calendar.FEBRUARY, 3);
+        hgDesc = "Expanding on the adventurous techniques that manifested their self-titled debut album, Chicago " +
+                "improvising trio, Hearsay returns with Glossolalia.";
+        vpDesc = "To oppose vulgarity is inevitably to be vulgar.";
     }
 
     @Test
@@ -42,7 +53,6 @@ public class CassetteTest {
     @Test
     public void testPrice() {
         assertNull(c.getPrice());
-        Dollar treefiddy = new Dollar(3,50);
         c.setPrice(treefiddy);
         assertEquals(3.50, c.getPrice().asDouble());
     }
@@ -50,10 +60,8 @@ public class CassetteTest {
     @Test
     public void testDescription() {
         assertNull(c.getDescription());
-        c.setDescription("Expanding on the adventurous techniques that manifested their self-titled debut album, " +
-                "Chicago improvising trio, Hearsay returns with Glossolalia.");
-        assertEquals("Expanding on the adventurous techniques that manifested their self-titled debut " +
-                "album, Chicago improvising trio, Hearsay returns with Glossolalia.", c.getDescription());
+        c.setDescription(hgDesc);
+        assertEquals(hgDesc, c.getDescription());
     }
 
     @Test
@@ -66,23 +74,20 @@ public class CassetteTest {
 
     @Test
     public void testEquals() {
-        Dollar treefiddy = new Dollar(3, 50);
-        GregorianCalendar hgrd = new GregorianCalendar(2023, GregorianCalendar.SEPTEMBER, 29);
         c.setArtist("Hearsay");
         c.setTitle("Glossolalia");
         c.setProductId("AM049");
         c.setPrice(treefiddy);
-        c.setDescription("High-bias cassette tape with artwork by Jacob van Loon.");
+        c.setDescription(hgDesc);
         c.setQuantity(100);
         c.setDuration(30);
-        c.setReleaseDate(hgrd);
+        c.setReleaseDate(hgReleaseDate);
 
-        GregorianCalendar vprd = new GregorianCalendar(2023, Calendar.FEBRUARY, 3);
-        Cassette inv = new Cassette("Violent Pleasures", "Iron Nerve & Vanity", "DBT012", treefiddy, "To oppose " +
-                "vulgarity is inevitably to be vulgar.", 32, 28, vprd);
+        Cassette inv = new Cassette("Violent Pleasures", "Iron Nerve & Vanity", "DBT012", treefiddy,
+                vpDesc, 32, vpReleaseDate, 28);
 
-        Cassette d = new Cassette("Hearsay", "Glossolalia", "AM049", treefiddy, "High-bias cassette tape with artwork" +
-                " by Jacob van Loon.", 100, 30, hgrd);
+        Cassette d = new Cassette("Hearsay", "Glossolalia", "AM049", treefiddy, hgDesc, 100,
+                hgReleaseDate, 30);
 
         assertNotEquals(c, inv);
         assertEquals(c, d);
@@ -98,20 +103,17 @@ public class CassetteTest {
 
     @Test
     public void testReleaseDate() {
-        GregorianCalendar hgrd = new GregorianCalendar(2023, Calendar.SEPTEMBER, 29);
         assertNull(c.getReleaseDate());
-        c.setReleaseDate(hgrd);
-        assertEquals(hgrd, c.getReleaseDate());
+        c.setReleaseDate(hgReleaseDate);
+        assertEquals(hgReleaseDate, c.getReleaseDate());
     }
 
     @Test
     public void testToString() {
-        GregorianCalendar vprd = new GregorianCalendar(2023, Calendar.FEBRUARY, 3);
-        Dollar treefiddy = new Dollar(3, 50);
-        Cassette inv = new Cassette("Violent Pleasures", "Iron Nerve & Vanity", "DBT012", treefiddy, "To oppose " +
-                "vulgarity is inevitably to be vulgar.", 32, 28, vprd);
-        assertEquals("Cassette[Artist=Violent Pleasures, Title=Iron Nerve & Vanity, ProductID=DBT012, Price=$3.50, " +
-                "Description=To oppose vulgarity is inevitably to be vulgar., QuantityOnHand=32, Duration=C-28, " +
-                "ReleaseDate=2023-02-03", inv.toString());
+        Cassette inv = new Cassette("Violent Pleasures", "Iron Nerve & Vanity", "DBT012", treefiddy,
+                vpDesc, 32, vpReleaseDate, 28);
+        assertEquals(String.format("Artist=Violent Pleasures, Title=Iron Nerve & Vanity, ProductID=DBT012, Price=$3" +
+                ".50, Description=%s, QuantityOnHand=32, ReleaseDate=2023-02-03, Duration=C-28", vpDesc),
+                inv.toString());
     }
 }
