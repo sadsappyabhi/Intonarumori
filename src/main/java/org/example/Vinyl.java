@@ -8,17 +8,26 @@ public class Vinyl extends MusicProduct {
     private DiscSize size;
 
     public enum RotationSpeed {
-        RPM33,
-        RPM45;
+        RPM33(1),
+        RPM45(2);
 
-        private RotationSpeed speed;
+        private int value;
+
+        RotationSpeed(int value) {
+            this.value = value;
+        }
+
+        public int valueOf() {
+            return value;
+        }
+
         @Override
         public String toString() {
             String rotation = "";
-            if (this.speed.equals(RPM33)) {
+            if (this.valueOf() == 1) {
                 rotation = "33 1/3 RPM";
             }
-            else if (this.speed.equals(RPM45)) {
+            else if (this.valueOf() == 2) {
                 rotation = "45 RPM";
             }
             return rotation;
@@ -26,18 +35,25 @@ public class Vinyl extends MusicProduct {
     }
 
     public enum DiscSize {
-        TWELVE,
-        SEVEN;
+        TWELVE(1),
+        SEVEN(2);
 
-        private DiscSize size;
+        private int value;
 
+        DiscSize(int value) {
+            this.value = value;
+        }
+
+        public int valueOf() {
+            return value;
+        }
         @Override
         public String toString() {
             String size = "";
-            if (this.size.equals(TWELVE)) {
+            if (this.valueOf() == 1) {
                 size = "12\"";
             }
-            else if (this.size.equals(SEVEN)) {
+            else if (this.valueOf() == 2) {
                 size = "7\"";
             }
             return size;

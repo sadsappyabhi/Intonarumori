@@ -79,6 +79,13 @@ class CompactDiscTest {
     }
 
     @Test
+    public void testDiscType() {
+        assertNull(cd.getDiscType());
+        cd.setDiscType(CompactDisc.DiscType.CD120MM);
+        assertEquals(CompactDisc.DiscType.CD120MM, cd.getDiscType());
+    }
+
+    @Test
     void testEquals() {
         cd.setArtist("T.E.F.");
         cd.setTitle("Wrought");
@@ -106,12 +113,5 @@ class CompactDiscTest {
         assertEquals(String.format("Artist=Parasite Nurse, Title=Life is Beautiful, ProductID=OXEN082, Price=$3.50, " +
                         "Description=%s, QuantityOnHand=14, ReleaseDate=2023-09-29, DiscType=120mm CD",
                         pnlib.getDescription()), pnlib.toString());
-    }
-
-    @Test
-    void getDiscType() {
-        assertNull(cd.getDiscType());
-        cd.setDiscType(CompactDisc.DiscType.CD120MM);
-        assertEquals(CompactDisc.DiscType.CD120MM, cd.getDiscType());
     }
 }
