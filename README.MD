@@ -28,7 +28,8 @@ Order of Product Attributes:
 - Quantity 
 
 ## FIXME: 
-- Product classes and their test cases.
+- ~~Product classes and their test cases.~~ Add a clothing/apparel product class, as well as a 'misc merch' 
+  that can be a catch-all for buttons/stickers/pins or any other items that don't fit into another category. 
 - Finish product classes and tests before writing Lookup tests (lookup tests require working with Product objects).
 - `LookupName.matches()` will need to be refactored after creating Clothing classes in order to achieve 100% coverage.
 - MusicProduct class needs an overridden `toString()` method still. (Each MusicProduct class has a unique identifier 
